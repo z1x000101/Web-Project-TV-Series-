@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Fist | The Origin</title>
+    <link rel="icon" type="image/png" href="C:\Users\MSi B760\Downloads\R.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(5, 6, 5, 0.9), var(--bg-dark));
+            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+        }
+
+        .page-header h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: var(--primary-gold);
+            text-shadow: 0 0 20px var(--primary-gold-glow), 0 0 40px var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .story-section {
+            padding: 5rem 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .story-block {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        .story-block:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .story-text {
+            flex: 1;
+        }
+
+        .story-text h2 {
+            color: var(--primary-gold);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-gold);
+            padding-left: 1rem;
+        }
+
+        .story-text p {
+            font-size: 1.15rem;
+            color: #d0d0d0;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-img-container {
+            flex: 1;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(255, 204, 0, 0.3);
+        }
+
+        .story-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition-slow);
+            filter: contrast(120%) brightness(0.8);
+        }
+
+        .story-img-container:hover .story-img {
+            transform: scale(1.05);
+            filter: contrast(140%) brightness(1.1);
+        }
+
+        .story-img-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2), transparent);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+
+            .story-block,
+            .story-block:nth-child(even) {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        .glow-text {
+            font-size: 3rem;
+            color: #fff;
+            text-align: center;
+            /* Initial glow */
+            text-shadow: 0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #0ff,
+                0 0 40px #0ff,
+                0 0 80px #0ff;
+            /* Animation */
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        /* Keyframes for glowing animation */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 4px #fffb00,
+                    0 0 8px #d9ff00,
+                    0 0 16px rgb(208, 255, 0),
+                    0 0 32px rgb(255, 230, 0),
+                    0 0 64px rgb(255, 255, 255);
+            }
+
+            to {
+                text-shadow: 0 0 8px #000000,
+                    0 0 16px rgb(0, 0, 0),
+                    0 0 32px rgb(0, 0, 0),
+                    0 0 64px rgb(0, 0, 0),
+                    0 0 128px rgb(0, 0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container" style="margin-bottom: -20px;">
+            <a href="index.html" class="nav-logo-link">
+                <ul class="nav-links">
+                    <li><img style="margin-right: 600px;"
+                            src="F:\Antigravity\App\tv-series-site\Assets\iron-fist-logo-marvel-wooden-wall-plaque.jpg"
+                            width="60" height="50" alt="Site Logo" class="logo"></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="the origin.html" class="active">Origin</a></li>
+                    <li><a href="characters.html">Factions</a></li>
+                    <li><a href="the war.html">War</a></li>
+                    <li><a href="the lore.html">Lore</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="animate-on-scroll glow-text">The Immortal Weapon</h1>
+            <p style="max-width: 600px; margin: 0 auto; padding-bottom: 2rem;">Forged in tragedy. Hardened in K'un-Lun.
+                Tested in New York.</p>
+        </div>
+    </header>
+
+    <section class="story-section container">
+
+        <div class="story-block animate-on-scroll">
+            <div class="story-text">
+                <h2>The Himalayan Crash</h2>
+                <p>When ten-year-old Danny Rand was flying to China with his billionaire parents, a tragic crash left
+                    him orphaned and stranded deep within the frozen Himalayas. As the blizzard closed in, he was
+                    rescued by mysterious warrior monks and swept away through a magical portal into the legendary,
+                    hidden city of K'un-Lun.</p>
+            </div>
+            <div class="story-img-container">
+                <img src="F:\Antigravity\App\tv-series-site\Assets\Origin\The Himalayan Crash.jpeg"
+                    alt="Snowy Mountains" class="story-img">
+            </div>
+        </div>
+
+        <div class="story-block animate-on-scroll">
+            <div class="story-text">
+                <h2>Training in K'un-Lun</h2>
+                <p>For fifteen arduous years, Danny endured brutal monastic martial arts conditioning under the strict
+                    tutelage of Lei Kung the Thunderer. He learned to weaponize his grief, transforming his trauma into
+                    pristine spiritual focus, slowly rising through the ranks to become K'un-Lun's greatest warrior.</p>
+            </div>
+            <div class="story-img-container">
+                <img src="F:\Antigravity\App\tv-series-site\Assets\Origin\Training in K'un-Lun.jfif" alt="Dojo Training"
+                    class="story-img">
+            </div>
+        </div>
+
+        <div class="story-block animate-on-scroll">
+            <div class="story-text">
+                <h2>Shou-Lao the Undying</h2>
+                <p>To claim the ultimate prize, Danny Rand faced the immortal dragon, Shou-Lao the Undying. By plunging
+                    his fists into the dragon's molten heart, he survived the unbearable agony to channel the power of
+                    the Iron Fist, becoming capable of summoning pure, indestructible Chi.</p>
+            </div>
+            <div class="story-img-container">
+                <img src="F:\Antigravity\App\tv-series-site\Assets\Origin\Shou-Lao the Undying.jpeg" alt="Glowing Fire"
+                    class="story-img">
+            </div>
+        </div>
+
+        <div class="story-block animate-on-scroll">
+            <div class="story-text">
+                <h2>The Return to New York</h2>
+                <p>Barefoot and presumed dead for 15 years, Danny returns to New York City to reclaim his father's
+                    multibillion-dollar company, Rand Enterprises. But he soon realizes that the city is deeply infected
+                    by his ancient, sworn enemy: the ninja assassin cult known as The Hand.</p>
+            </div>
+            <div class="story-img-container">
+                <img src="F:\Antigravity\App\tv-series-site\Assets\Origin\The Return to New York.jfif"
+                    alt="New York Skyline" class="story-img">
+            </div>
+        </div>
+
+        <div class="text-center animate-on-scroll" style="margin-top: 4rem;">
+            <button class="btn" onclick="window.location.href='Characters.html'">Review the Factions</button>
+        </div>
+
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

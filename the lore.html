@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Fist | The Lore</title>
+    <link rel="icon" type="image/png" href="C:\Users\MSi B760\Downloads\R.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(5, 6, 5, 0.9), var(--bg-dark));
+            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+        }
+
+        .page-header h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: var(--primary-gold);
+            text-shadow: 0 0 20px var(--primary-gold-glow), 0 0 40px var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            padding: 5rem 0;
+        }
+
+        .feature-card {
+            background: rgba(10, 14, 10, 0.6);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 204, 0, 0.1);
+            transition: var(--transition-medium);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(20, 20, 15, 0.9);
+            border-color: rgba(255, 204, 0, 0.6);
+            box-shadow: 0 10px 40px rgba(255, 204, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            text-shadow: 0 0 20px var(--primary-gold-glow);
+        }
+
+        .feature-card h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .review-section {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.05), transparent);
+            padding: 5rem 0;
+            border-top: 1px solid rgba(255, 204, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 204, 0, 0.1);
+            margin: 3rem 0;
+        }
+
+        .quote {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .quote blockquote {
+            font-size: 2rem;
+            font-family: var(--font-heading);
+            color: var(--primary-gold);
+            line-height: 1.4;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+        }
+
+        .quote cite {
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .glow-text {
+            font-size: 3rem;
+            color: #fff;
+            text-align: center;
+            /* Initial glow */
+            text-shadow: 0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #0ff,
+                0 0 40px #0ff,
+                0 0 80px #0ff;
+            /* Animation */
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        /* Keyframes for glowing animation */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 4px #fffb00,
+                    0 0 8px #d9ff00,
+                    0 0 16px rgb(208, 255, 0),
+                    0 0 32px rgb(255, 230, 0),
+                    0 0 64px rgb(255, 255, 255);
+            }
+
+            to {
+                text-shadow: 0 0 8px #000000,
+                    0 0 16px rgb(0, 0, 0),
+                    0 0 32px rgb(0, 0, 0),
+                    0 0 64px rgb(0, 0, 0),
+                    0 0 128px rgb(0, 0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container" style="margin-bottom: -20px;">
+            <a href="index.html" class="nav-logo-link">
+                <ul class="nav-links">
+                    <li><img style="margin-right: 600px;"
+                            src="F:\Antigravity\App\tv-series-site\Assets\iron-fist-logo-marvel-wooden-wall-plaque.jpg"
+                            width="60" height="50" alt="Site Logo" class="logo"></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="the origin.html">Origin</a></li>
+                    <li><a href="characters.html">Factions</a></li>
+                    <li><a href="the war.html">War</a></li>
+                    <li><a href="the lore.html" class="active">Lore</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="animate-on-scroll glow-text">The Iron Path</h1>
+            <p class="animate-on-scroll delay-1" style="max-width: 600px; margin: 0 auto; padding-bottom: 2rem;">Why
+                Marvel's mystical street-level action demands your attention.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="container features-grid">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">⛩️</div>
+                <h3>Deep Mystical Lore</h3>
+                <p>Dive deep into the Marvel mythology, exploring the ancient city of K'un-Lun that
+                    only appears on
+                    Earth once every 15 years, and the immortal dragon Shou-Lao whose heart powers the Iron Fist.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll delay-1">
+                <div class="feature-icon">🥋</div>
+                <h3>Intense Choreography</h3>
+                <p>Especially in its stunning second season, Iron Fist delivers gritty, high-octane
+                    martial arts street
+                    fighting, blending Wushu, Kung Fu, and vicious weapon-based combat led by Colleen Wing.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll delay-2">
+                <div class="feature-icon">🏙️</div>
+                <h3>Street-Level Marvel</h3>
+                <p>Step away from the cosmic Avengers battles and step down into the grimy boardrooms
+                    and back-alleys of
+                    New York City, where corporate espionage intersects with deadly ninja assassins.</p>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <div class="container quote animate-on-scroll">
+                <blockquote>"I AM THE IMMORTAL IRON FIST. PROTECTOR OF K'UN-LUN. SWORN ENEMY OF THE HAND."</blockquote>
+                <cite>— Danny Rand</cite>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
