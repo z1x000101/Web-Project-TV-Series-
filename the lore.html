@@ -130,23 +130,52 @@
                     0 0 128px rgb(0, 0, 0);
             }
         }
+
+        /* === MOBILE === */
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 2rem 0;
+            }
+
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .quote blockquote {
+                font-size: 1.2rem;
+                padding: 0 0.5rem;
+            }
+
+            .review-section {
+                padding: 3rem 0;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <nav>
-        <div class="nav-container" style="margin-bottom: -20px;">
+        <div class="nav-container">
             <a href="index.html" class="nav-logo-link">
-                <ul class="nav-links">
-                    <li><img style="margin-right: 600px;" src="Assets\iron-fist-logo-marvel-wooden-wall-plaque.jpg"
-                            width="60" height="50" alt="Site Logo" class="logo"></li>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="the origin.html">Origin</a></li>
-                    <li><a href="characters.html">Factions</a></li>
-                    <li><a href="the war.html">War</a></li>
-                    <li><a href="the lore.html" class="active">Lore</a></li>
-                </ul>
+                <img src="Assets\iron-fist-icon-4.png" width="60" height="42" alt="Site Logo" class="logo">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="the origin.html">Origin</a></li>
+                <li><a href="characters.html">Factions</a></li>
+                <li><a href="the war.html">War</a></li>
+                <li><a href="the lore.html" class="active">Lore</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -196,5 +225,7 @@
 
     <script src="js/main.js"></script>
 </body>
+
+</html>
 
 </html>
