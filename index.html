@@ -394,28 +394,43 @@
 
     <script src="js/main.js"></script>
 
-<script>
-  const loader = document.getElementById("intro-loader");
-  const video = document.getElementById("intro-video");
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("intro-loader");
+            const video = document.getElementById("intro-video");
 
-  // 🔥 If intro already played → remove instantly
-  if (sessionStorage.getItem("introPlayed") === "true") {
-    loader.style.display = "none";
-  } else {
+            // 1. Switch to sessionStorage to allow the intro once per tab session
+            if (sessionStorage.getItem("introPlayed") === "true") {
+                if (loader) {
+                    loader.style.display = "none"; // Hide immediately
+                    loader.remove();
+                }
+                return;
+            }
 
-    // 🔥 Mark as played IMMEDIATELY (not after video)
-    sessionStorage.setItem("introPlayed", "true");
+            // 2. Play intro normally
+            if (video) {
+                video.play().catch(error => {
+                    // Browsers often block autoplay; if it fails, just remove the loader
+                    console.log("Autoplay blocked or failed:", error);
+                    loader.remove();
+                });
 
-    video.onended = () => {
-      loader.classList.add("fade-out");
+                video.onended = () => {
+                    loader.classList.add("fade-out");
 
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 600);
-    };
-
-  }
-</script>
+                    setTimeout(() => {
+                        loader.remove();
+                        // 3. Mark as played for THIS session only
+                        sessionStorage.setItem("introPlayed", "true");
+                    }, 600);
+                };
+            } else {
+                // Safety check: if no video found, remove loader so site isn't stuck
+                if (loader) loader.remove();
+            }
+        });
+    </script>
 
 </body>
 
