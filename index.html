@@ -278,6 +278,12 @@
 
 <body>
 
+    <div id="intro-loader">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="Assets\IRONFIST LOGO INTRO.mp4" type="video/mp4">
+        </video>
+    </div>
+
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo-link">
@@ -387,6 +393,28 @@
     </header>
 
     <script src="js/main.js"></script>
+
+    <script>
+        const loader = document.getElementById("intro-loader");
+        const video = document.getElementById("intro-video");
+
+        // Check if intro already played
+        if (sessionStorage.getItem("introPlayed")) {
+            loader.style.display = "none";
+        } else {
+            video.onended = () => {
+                loader.classList.add("fade-out");
+
+                setTimeout(() => {
+                    loader.style.display = "none";
+                }, 600);
+
+                // Mark as played
+                sessionStorage.setItem("introPlayed", "true");
+            };
+        }
+    </script>
+
 </body>
 
 </html>
