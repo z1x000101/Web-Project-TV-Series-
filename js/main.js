@@ -170,3 +170,16 @@ function setupChiPulses() {
         }
     }, 4000); // Pulse gently and periodically
 }
+
+const video = document.getElementById("intro-video");
+const loader = document.getElementById("intro-loader");
+
+video.onended = () => {
+    loader.classList.add("fade-out");
+
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 600);
+};
+
+localStorage.setItem("introPlayed", "true");
