@@ -182,4 +182,4 @@ video.onended = () => {
     }, 600);
 };
 
-localStorage.setItem("introPlayed", "true");
+if (localStorage.getItem("introPlayed") === "true")
