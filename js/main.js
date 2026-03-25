@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setupHamburger() {
     const hamburger = document.getElementById('hamburger');
-    const navLinks  = document.getElementById('nav-links');
+    const navLinks = document.getElementById('nav-links');
     if (!hamburger || !navLinks) return;
 
     hamburger.addEventListener('click', () => {
@@ -182,4 +182,6 @@ video.onended = () => {
     }, 600);
 };
 
-if (localStorage.getItem("introPlayed") === "true")
+localStorage.clear();
+
+localStorage.removeItem("introPlayed");
