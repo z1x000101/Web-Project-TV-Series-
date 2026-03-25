@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Fist | The War</title>
+    <title>Iron Fist | The Origin</title>
     <link rel="icon" type="image/png" href="Assets\iron-fist-icon-4.png">
     <link rel="stylesheet" href="css/style.css">
 
@@ -24,125 +24,96 @@
             margin-bottom: 1rem;
         }
 
-        .timeline {
-            position: relative;
+        .story-section {
+            padding: 5rem 0;
             max-width: 1000px;
-            margin: 5rem auto;
-            padding: 2rem 0;
+            margin: 0 auto;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: rgba(255, 204, 0, 0.3);
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
-        }
-
-        .timeline-item {
-            position: relative;
+        .story-block {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
             margin-bottom: 6rem;
-            width: 50%;
-            padding-right: 3rem;
-            text-align: right;
         }
 
-        .timeline-item:nth-child(even) {
-            margin-left: 50%;
-            padding-right: 0;
-            padding-left: 3rem;
-            text-align: left;
+        .story-block:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .timeline-dot {
-            position: absolute;
-            top: 0;
-            right: -13px;
-            width: 22px;
-            height: 22px;
-            background: #000;
-            border: 4px solid var(--primary-gold);
-            border-radius: 50%;
-            z-index: 2;
-            box-shadow: 0 0 15px var(--primary-gold-glow);
+        .story-text {
+            flex: 1;
         }
 
-        .timeline-item:nth-child(even) .timeline-dot {
-            left: -13px;
-            right: auto;
+        .story-text h2 {
+            color: var(--primary-gold);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-gold);
+            padding-left: 1rem;
         }
 
-        .season-card {
-            background: rgba(10, 14, 10, 0.8);
-            border: 1px solid rgba(255, 204, 0, 0.2);
-            padding: 2.5rem;
-            border-radius: 4px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
-            transition: var(--transition-medium);
+        .story-text p {
+            font-size: 1.15rem;
+            color: #d0d0d0;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-img-container {
+            flex: 1;
             position: relative;
+            border-radius: 4px;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(255, 204, 0, 0.3);
         }
 
-        .season-card::before {
+        .story-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition-slow);
+            filter: contrast(120%) brightness(0.8);
+        }
+
+        .story-img-container:hover .story-img {
+            transform: scale(1.05);
+            filter: contrast(140%) brightness(1.1);
+        }
+
+        .story-img-container::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
-        }
-
-        .season-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 204, 0, 0.6);
-            box-shadow: 0 10px 40px rgba(255, 204, 0, 0.15);
-        }
-
-        .season-card h2 {
-            color: var(--primary-gold);
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .season-card h3 {
-            color: #fff;
-            font-family: var(--font-body);
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-        }
-
-        .season-card p {
-            color: #d0d0d0;
-            font-size: 1.05rem;
-            line-height: 1.7;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2), transparent);
+            pointer-events: none;
         }
 
         @media (max-width: 768px) {
-            .timeline::before {
-                left: 30px;
+
+            .story-block,
+            .story-block:nth-child(even) {
+                flex-direction: column;
+                gap: 2rem;
             }
 
-            .timeline-item {
-                width: 100%;
-                padding-left: 80px;
-                padding-right: 0;
-                text-align: left;
+            .story-section {
+                padding: 2rem 0;
             }
 
-            .timeline-item:nth-child(even) {
-                margin-left: 0;
+            .story-block {
+                margin-bottom: 3rem;
             }
 
-            .timeline-dot {
-                left: 18px;
-                right: auto;
+            .story-text h2 {
+                font-size: 1.4rem;
+            }
+
+            .story-text p {
+                font-size: 1rem;
             }
         }
 
@@ -193,9 +164,9 @@
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="the origin.html">Origin</a></li>
+                <li><a href="the origin.html" class="active">Origin</a></li>
                 <li><a href="characters.html">Factions</a></li>
-                <li><a href="the war.html" class="active">War</a></li>
+                <li><a href="the war.html">War</a></li>
                 <li><a href="the lore.html">Lore</a></li>
             </ul>
         </div>
@@ -203,61 +174,68 @@
 
     <header class="page-header">
         <div class="container">
-            <h2 class="animate-on-scroll glow-text" style="color: #ffcc00;">Campaign Timeline</h2>
-            <p class="animate-on-scroll delay-1" style="max-width: 600px; margin: 0 auto; padding-bottom: 2rem;">The
-                defense of New York and the legacy of K'un-Lun.</p>
+            <h2 class="animate-on-scroll glow-text" style="color: #ffcc00;">The Immortal Weapon</h2>
+            <p style="max-width: 600px; margin: 0 auto; padding-bottom: 2rem;">Forged in tragedy. Hardened in K'un-Lun.
+                Tested in New York.</p>
         </div>
     </header>
 
-    <main class="container">
-        <div class="timeline">
+    <section class="story-section container">
 
-            <div class="timeline-item animate-on-scroll">
-                <div class="timeline-dot"></div>
-                <div class="season-card">
-                    <h2>Season 1</h2>
-                    <h3>The Return & The Hand</h3>
-                    <p>Danny Rand violently resurfaces in New York City after a 15-year disappearance in the mystical
-                        city of K'un-Lun. As he attempts to reclaim his billionaire inheritance from his childhood
-                        friends Ward and Joy Meachum, he discovers his company has been deeply infiltrated by The Hand,
-                        an ancient ninja cult. Guided by his Iron Fist powers and allying with martial artist Colleen
-                        Wing, Danny wages a brutal corporate and physical war against Madame Gao and the secretly
-                        resurrected Harold Meachum to reclaim his destiny.</p>
-                </div>
+        <div class="story-block animate-on-scroll">
+            <div class="story-text">
+                <h2>The Himalayan Crash</h2>
+                <p>When ten-year-old Danny Rand was flying to China with his billionaire parents, a tragic crash left
+                    him orphaned and stranded deep within the frozen Himalayas. As the blizzard closed in, he was
+                    rescued by mysterious warrior monks and swept away through a magical portal into the legendary,
+                    hidden city of K'un-Lun.</p>
             </div>
-
-            <div class="timeline-item animate-on-scroll delay-1">
-                <div class="timeline-dot"></div>
-                <div class="season-card">
-                    <h2>Season 2</h2>
-                    <h3>The Steel Serpent</h3>
-                    <p>With K'un-Lun mysteriously vanished and New York engulfed in gang warfare, Danny steps up as the
-                        downtown protector. However, his mission is shattered when his adoptive K'un-Lun brother, Davos,
-                        arrives in the city. Boiling with jealousy and radical ideology, Davos violently steals the
-                        power of the Iron Fist through an ancient ritual. Powerless and broken, Danny must retrain his
-                        mind and body under Colleen's guidance to stop the Steel Serpent from bathing the streets in
-                        self-righteous bloodshed.</p>
-                </div>
+            <div class="story-img-container">
+                <img src="Assets\Origin\The Himalayan Crash.jpeg" alt="Snowy Mountains" class="story-img">
             </div>
-
-            <div class="timeline-item animate-on-scroll delay-2">
-                <div class="timeline-dot"></div>
-                <div class="season-card">
-                    <h2>The Defenders</h2>
-                    <h3>The Grand Crossover</h3>
-                    <p>Alongside his solo efforts, Danny Rand acts as the critical mystical anchor in <em>The
-                            Defenders</em>. Uniting with Daredevil, Jessica Jones, and Luke Cage, the Immortal Iron Fist
-                        acts as the key to stopping The Hand from harvesting dragons buried beneath New York City to
-                        achieve true immortality.</p>
-                </div>
-            </div>
-
         </div>
 
-        <div class="text-center animate-on-scroll" style="margin-bottom: 5rem;">
-            <button class="btn" onclick="window.location.href='the lore.html'">Discover the Lore</button>
+        <div class="story-block animate-on-scroll">
+            <div class="story-text">
+                <h2>Training in K'un-Lun</h2>
+                <p>For fifteen arduous years, Danny endured brutal monastic martial arts conditioning under the strict
+                    tutelage of Lei Kung the Thunderer. He learned to weaponize his grief, transforming his trauma into
+                    pristine spiritual focus, slowly rising through the ranks to become K'un-Lun's greatest warrior.</p>
+            </div>
+            <div class="story-img-container">
+                <img src="Assets\Origin\Training in K'un-Lun.jfif" alt="Dojo Training" class="story-img">
+            </div>
         </div>
-    </main>
+
+        <div class="story-block animate-on-scroll">
+            <div class="story-text">
+                <h2>Shou-Lao the Undying</h2>
+                <p>To claim the ultimate prize, Danny Rand faced the immortal dragon, Shou-Lao the Undying. By plunging
+                    his fists into the dragon's molten heart, he survived the unbearable agony to channel the power of
+                    the Iron Fist, becoming capable of summoning pure, indestructible Chi.</p>
+            </div>
+            <div class="story-img-container">
+                <img src="Assets\Origin\Shou-Lao the Undying.jpeg" alt="Glowing Fire" class="story-img">
+            </div>
+        </div>
+
+        <div class="story-block animate-on-scroll">
+            <div class="story-text">
+                <h2>The Return to New York</h2>
+                <p>Barefoot and presumed dead for 15 years, Danny returns to New York City to reclaim his father's
+                    multibillion-dollar company, Rand Enterprises. But he soon realizes that the city is deeply infected
+                    by his ancient, sworn enemy: the ninja assassin cult known as The Hand.</p>
+            </div>
+            <div class="story-img-container">
+                <img src="Assets\Origin\The Return to New York.jfif" alt="New York Skyline" class="story-img">
+            </div>
+        </div>
+
+        <div class="text-center animate-on-scroll" style="margin-top: 4rem;">
+            <button class="btn" onclick="window.location.href='Characters.html'">Review the Factions</button>
+        </div>
+
+    </section>
 
     <script src="js/main.js"></script>
 </body>
